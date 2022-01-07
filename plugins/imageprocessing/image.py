@@ -5,7 +5,7 @@ except ImportError:
 import pytesseract
 import os
 pytesseract.pytesseract.tesseract_cmd = "tesseract"
-os.environ["TESSDATA_PREFIX"] = "~/Split/tessdata"
+os.environ["TESSDATA_PREFIX"] = "/home/runner/Split/tessdata/"
 
 # downloads the image into a file
 def imageHandler(update, context):
@@ -19,4 +19,5 @@ def imageHandler(update, context):
 # processes image
 def imageProcessing():
   print(pytesseract.get_languages(config=''))
-  print(pytesseract.image_to_string(Image.open('images/image.jpg')))
+  print(pytesseract.image_to_string(Image.open('images/image.jpg'), lang='eng'))
+  print("end of function\n")
