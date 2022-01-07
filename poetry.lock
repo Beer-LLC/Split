@@ -1,4 +1,12 @@
 [[package]]
+name = "jdatetime"
+version = "3.8.0"
+description = "Jalali datetime binding for python"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "pil-compat"
 version = "1.0.0"
 description = "Compatibility modules, bridging PIL -> Pillow"
@@ -17,6 +25,12 @@ category = "main"
 optional = false
 python-versions = ">=3.7"
 
+[package.dependencies]
+jdatetime = ">=3.6.2"
+python-dateutil = ">=2.8.0"
+pytz = ">=2019.3"
+six = ">=1.12.0"
+
 [[package]]
 name = "pytesseract"
 version = "0.3.8"
@@ -29,6 +43,33 @@ python-versions = ">=3.6"
 Pillow = "*"
 
 [[package]]
+name = "python-dateutil"
+version = "2.8.2"
+description = "Extensions to the standard Python datetime module"
+category = "main"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
+
+[package.dependencies]
+six = ">=1.5"
+
+[[package]]
+name = "pytz"
+version = "2021.3"
+description = "World timezone definitions, modern and historical"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "six"
+version = "1.16.0"
+description = "Python 2 and 3 compatibility utilities"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
+
+[[package]]
 name = "telegram"
 version = "0.0.1"
 description = "Telegram APIs"
@@ -39,9 +80,13 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "271eb14788fb60e63391b81b2ac43d956c1f182f10d6ff5da6d20c939a27fe02"
+content-hash = "948d382a67b21af3aa3d762ffb1133c650eda8011296aef3c1288aa4a9e32ce8"
 
 [metadata.files]
+jdatetime = [
+    {file = "jdatetime-3.8.0-py3-none-any.whl", hash = "sha256:ea953e293d2eaa3f1e0a0c89dc61dcd8d55443f9ba5934e23bce0296b7eeb8a6"},
+    {file = "jdatetime-3.8.0.tar.gz", hash = "sha256:389a0723a8011379a5e34386ec466cb3f65b2d5cb5422702c1d3aecb6ac192d0"},
+]
 pil-compat = [
     {file = "pil-compat-1.0.0.tar.gz", hash = "sha256:cb88f387ae4eb2d2898aa2b2051e004bb21bc22de2cd91cea92897386ec1f33b"},
     {file = "pil_compat-1.0.0-py2.py3-none-any.whl", hash = "sha256:bf6ca1a37bf8c7594b32c179a4c4e03160d62280db53a297407883801b283f1c"},
@@ -83,6 +128,22 @@ pillow = [
 pytesseract = [
     {file = "pytesseract-0.3.8.tar.gz", hash = "sha256:6148a01e4375760862e8f56ea718e22b5d13b281454df46ea8dac9807793fc5a"},
 ]
+python-dateutil = [
+    {file = "python-dateutil-2.8.2.tar.gz", hash = "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"},
+    {file = "python_dateutil-2.8.2-py2.py3-none-any.whl", hash = "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"},
+]
+pytz = [
+    {file = "pytz-2021.3-py2.py3-none-any.whl", hash = "sha256:3672058bc3453457b622aab7a1c3bfd5ab0bdae451512f6cf25f64ed37f5b87c"},
+    {file = "pytz-2021.3.tar.gz", hash = "sha256:acad2d8b20a1af07d4e4c9d2e9285c5ed9104354062f275f3fcd88dcef4f1326"},
+]
+six = [
+    {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
+    {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
+]
 telegram = [
     {file = "telegram-0.0.1.tar.gz", hash = "sha256:d405a0af4c868a8dbeae6d03e297e21c7ee6269e11e2ed3810e15544aba02591"},
+]
+typing = [
+    {file = "typing-3.7.4.3-py2-none-any.whl", hash = "sha256:283d868f5071ab9ad873e5e52268d611e851c870a2ba354193026f2dfb29d8b5"},
+    {file = "typing-3.7.4.3.tar.gz", hash = "sha256:1187fb9c82fd670d10aa07bbb6cfcfe4bdda42d6fab8d5134f04e8c4d0b71cc9"},
 ]

@@ -1,0 +1,47 @@
+[
+    {
+        "label": "Merchant_Address",
+        "ocr_text": "90 Hougang ave\nHougang Mall #01-42/43\nSingapore 538766",
+        "score": 0.99997413,
+        "xmin": 350,
+        "xmax": 568,
+        "ymin": 204,
+        "ymax": 269
+    },
+    {
+        "label": "Receipt_Number",
+        "ocr_text": "202110181848108740102",
+        "score": 0.99999297,
+        "xmin": 353,
+        "xmax": 571,
+        "ymin": 499,
+        "ymax": 524
+    },
+    {
+        "label": "Total_Amount",
+        "ocr_text": "$6.5",
+        "score": 0.9999726,
+        "xmin": 623,
+        "xmax": 667,
+        "ymin": 789,
+        "ymax": 811
+    },
+    {
+        "label": "Date",
+        "ocr_text": "2021-10-18",
+        "score": 0.9999995,
+        "xmin": 384,
+        "xmax": 487,
+        "ymin": 527,
+        "ymax": 546
+    },
+    {
+        "label": "Merchant_Name",
+        "ocr_text": "Eng's Wantan Noodle",
+        "score": 0.99049264,
+        "xmin": 362,
+        "xmax": 547,
+        "ymin": 182,
+        "ymax": 204
+    }
+]
