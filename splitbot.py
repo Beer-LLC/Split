@@ -22,7 +22,7 @@ def main():
     # Create the Updater and pass it your bot's token.
     # Make sure to set use_context=True to use the new context based callbacks
     # Post version 12 this will no longer be necessary
-    my_secret = '5004842516:AAGZ-eI9RJ0vuTM-14L0ipWxjSyRcR13Ajs'
+    my_secret = os.environ['my_secret']
     updater = Updater(my_secret, use_context=True)
 
     # Get the dispatcher to register handlers

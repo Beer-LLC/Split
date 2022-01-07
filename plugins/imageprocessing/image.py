@@ -20,7 +20,6 @@ def imageHandler(update, context):
     photocaption = update.message.caption
   persons = nanonets.parseAmount(photocaption)
   print(persons)
-  # print ("file_id: " + str(update.message.photo.file_id))
   file.download('images/image.jpg')
   print("Image loaded successfully!\n")
   total_amt = nanonets.nanonetOcr()
@@ -29,12 +28,3 @@ def imageHandler(update, context):
   indiv_amt_str = "each person pays $" + str(round(individual_amt,2))
   print(indiv_amt_str)
   update.message.reply_text(indiv_amt_str)
-  # imageProcessing()
-
-# processes image
-def imageProcessing():
-  print(pytesseract.get_languages(config=''))
-  tic = time.perf_counter()
-  print(pytesseract.image_to_string(Image.open('images/image.jpg'), lang='eng'))
-  toc = time.perf_counter()
-  print(f"OCR took {toc - tic:0.4f} seconds")
