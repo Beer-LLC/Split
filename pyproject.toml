@@ -6,9 +6,9 @@ authors = ["yujinyang1998 <<>>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-telegram = "^0.0.1"
 pil-compat = "^1.0.0"
 pytesseract = "^0.3.8"
+telegram = "^0.0.1"
 
 [tool.poetry.dev-dependencies]
 

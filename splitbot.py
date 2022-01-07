@@ -4,9 +4,9 @@
 
 import logging
 import os
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters,CallbackQueryHandler
 # from plugins.interface import interface
-from plugins.interface import start, help, error, echo, date
+from plugins.interface import start, help, error, echo, date, queryhandler
 from plugins.imageprocessing import image
 from telegram import *
 
@@ -28,14 +28,17 @@ def main():
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
 
-    # commands
+    # command handlers
     dp.add_handler(CommandHandler("start", start.start))
     dp.add_handler(CommandHandler("help", help.help))
     dp.add_handler(CommandHandler("date", date.getDateTime))
 
-    # messages
+    # message handlers
     dp.add_handler(MessageHandler(Filters.text, echo.echo))
     dp.add_handler(MessageHandler(Filters.photo, image.imageHandler))
+    
+    # callback query handlers
+    dp.add_handler(CallbackQueryHandler(queryhandler.queryHandler))
 
     # errors
     dp.add_error_handler(error.error)
@@ -47,7 +50,6 @@ def main():
     # SIGTERM or SIGABRT. This should be used most of the time, since
     # start_polling() is non-blocking and will stop the bot gracefully.
     updater.idle()
-
 
 if __name__ == '__main__':
     main()
