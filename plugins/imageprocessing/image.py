@@ -26,7 +26,7 @@ def imageHandler(update, context):
   total_amt = nanonets.nanonetOcr()
   # get user input integer
   individual_amt = total_amt/persons
-  indiv_amt_str = "each person pays $" + str(individual_amt)
+  indiv_amt_str = "each person pays $" + str(round(individual_amt,2))
   print(indiv_amt_str)
   update.message.reply_text(indiv_amt_str)
   # imageProcessing()
@@ -35,6 +35,6 @@ def imageHandler(update, context):
 def imageProcessing():
   print(pytesseract.get_languages(config=''))
   tic = time.perf_counter()
-  print(pytesseract.image_to_string(Image.open('images/image.jpg'), lang='eng'))  
+  print(pytesseract.image_to_string(Image.open('images/image.jpg'), lang='eng'))
   toc = time.perf_counter()
   print(f"OCR took {toc - tic:0.4f} seconds")
