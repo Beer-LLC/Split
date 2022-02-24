@@ -1,14 +1,15 @@
 import requests
 import os
+from dotenv import load_dotenv
 import json
 import re
 
-
-nanonets_auth = os.environ['NANONETS_KEY']
+load_dotenv()
+nanonets_auth = os.getenv('NANONETS_KEY')
 TOTAL_AMT_STR = "Total_Amount"
 VALUE = "ocr_text"
 
-url = os.environ['url']
+url = os.getenv('url')
 
 def nanonetOcr():
   image_path = os.getcwd() + "/images/image.jpg"

@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # This program is dedicated to the public domain under the CC0 license.
-
 import logging
 import os
+from dotenv import load_dotenv
+from telegram import update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters,CallbackQueryHandler
 # from plugins.interface import interface
 from plugins.interface import start, help, error, echo, date, queryhandler
@@ -16,13 +17,13 @@ logging.basicConfig(format='%(asctime)s\n - %(name)s\n - %(levelname)s\n - %(mes
 
 logger = logging.getLogger(__name__)
 
-
+load_dotenv()
 def main():
     """Start the bot."""
     # Create the Updater and pass it your bot's token.
     # Make sure to set use_context=True to use the new context based callbacks
     # Post version 12 this will no longer be necessary
-    my_secret = os.environ['my_secret']
+    my_secret = os.getenv('my_secret')
     updater = Updater(my_secret, use_context=True)
 
     # Get the dispatcher to register handlers
@@ -50,6 +51,7 @@ def main():
     # SIGTERM or SIGABRT. This should be used most of the time, since
     # start_polling() is non-blocking and will stop the bot gracefully.
     updater.idle()
+    update.message.reply_text("Upload an image with a number to split the bill")
 
 if __name__ == '__main__':
     main()
